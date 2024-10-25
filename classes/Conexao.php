@@ -3,13 +3,13 @@
 class Conexao extends PDO
 {
     private static $instancia;
-
+ 
     // Armazenam as informações de conexão com o banco de dados
+    private $db_name = "bd_locadora";   // Nome do Banco de Dados
+    private $db_host = "127.0.0.1";     // Host do Banco de Dados
+    private $db_user = "root";          // Nome do Usuário
+    private $db_pass = "";              // Senha do Usuário
     private $query;
-    private $host = "127.0.0.1";  // endereço do servidor
-    private $usuario = "root";    // usuário do servidor
-    private $senha = "";          // senha do servidor
-    private $db = "bd_produto";   // banco do mysql
 
     // Construtor da classe
     public function __construct()
