@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  line-height: calc(1em + 0.5rem);
   box-sizing: border-box;
 }
 body {
@@ -14,11 +15,15 @@ p {
   font-size: 20px;
 }
 
-input {
+input, textarea {
   outline: 2px solid #ff4a57;
   padding: 0.2em 0.3em;
   border-radius: 0.3em;
   font-size: 20px;
+}
+
+textarea{
+  font-size: 16px;
 }
 
 button {
@@ -29,9 +34,30 @@ button {
   font-weight: 700;
   color: white;
   transition: all 0.3s;
+  cursor: pointer;
   &:hover {
-    cursor: pointer;
+    
     transform: translateY(-0.3em);
     background-color: #d13741;
   }
+}
+
+.button-outlined{
+  background-color: white;
+  outline: 0.15em;
+  outline-offset: -0.15em;
+  outline-color: #ff4a57;
+  outline-style: solid;
+  color: #ff4a57;
+  &:hover {
+    
+    transform: translateY(-0.3em);
+    background-color: #ff4a57;
+    color: white;
+  }
+
+}
+h1{
+  font-size: 2em;
+  color: #ff4a57 ;
 }

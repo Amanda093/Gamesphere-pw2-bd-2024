@@ -3,7 +3,7 @@
 class Conexao extends PDO
 {
     private static $instancia;
- 
+
     // Armazenam as informações de conexão com o banco de dados
     private $db_name = "bd_locadora";   // Nome do Banco de Dados
     private $db_host = "127.0.0.1";     // Host do Banco de Dados
@@ -26,8 +26,7 @@ class Conexao extends PDO
             try {
                 self::$instancia = new Conexao; // Cria a nova instância da classe
                 echo 'Conectado com sucesso!';
-            } 
-            catch (Exception $error) {
+            } catch (Exception $error) {
                 echo 'Erro ao conectar';
                 exit();
             }
