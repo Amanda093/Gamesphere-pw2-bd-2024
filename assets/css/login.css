@@ -9,7 +9,7 @@ body {
   height: 100%;
 }
 
-#login {
+section#login {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,6 +21,12 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 5px 5px 10px #f0f0f0;
+
+    & form{
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+    }
 }
 
 h1 {

@@ -8,7 +8,7 @@
 </head>
 <body>
     <main id="corpo">
-        <section>
+        <section id="login">
             <form name="usuario" method="POST" action="">
                 <h1>Login</h1>
                 <div class="row">
