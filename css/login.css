@@ -1,0 +1,54 @@
+body {
+  background: linear-gradient(0deg, #77212780 0%, #7b26ac80 100%),
+    url(https://static.wixstatic.com/media/9a7dec_7f6f7c02086a46b1bcaf8862a8efb49b~mv2.jpg/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/9a7dec_7f6f7c02086a46b1bcaf8862a8efb49b~mv2.jpg),
+    #3f2222 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+main {
+  margin-inline: auto;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(7, 8, 48, 0.377);
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  & label,
+  input {
+    width: 100%;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 30rem;
+  padding-inline: 2.5em;
+  height: 30rem;
+  background: #ffffff;
+  border-radius: 24px;
+  color: #232323;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 4px #f0f0f0;
+
+  & form {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+  }
+}

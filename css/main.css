@@ -1,0 +1,88 @@
+main {
+  margin-inline: auto;
+  width: 100vw;
+  min-height: 45rem;
+  height: 100vh;
+  padding-top: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  width: 90%;
+  gap: 4%;
+  justify-content: space-between;
+}
+.main #formContato,
+.main #desenvolvedores {
+  margin-inline: auto;
+  width: 48%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+#formContato {
+  max-width: 30rem;
+}
+
+#desenvolvedores {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.row button {
+  width: 7rem;
+}
+
+.logo-dev {
+  max-width: 30rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+@media (max-width: 1536px) {
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1024px) {
+  .main {
+    display: flex;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .main #formContato,
+  .main #desenvolvedores {
+    width: 85%;
+  }
+  main {
+    min-height: 75rem;
+  }
+}
+
+@media (max-width: 640px) {
+}
+
+@media (max-width: 475px) {
+}

@@ -93,8 +93,8 @@ CREATE TABLE `funcionario` (
 
 INSERT INTO `funcionario` (`CodFuncionario`, `Nome`, `Salario`, `Email`, `Telefone`, `RG`, `CPF`, `Usuario`, `Senha`) VALUES
 (1, 'Amanda Farias', 2900, 'amanda.tec@email.com.br', '93346-4173', '32.226.256-2', '740.160.568-61', 'amanda', '123'),
-(2, 'Carlos Henrique', 2200, 'carlos.tec@email.com.br', '92666-3818', '31.982.279-5', '750.793.068-82', 'carlos', '123');
-(3, 'Sakiri Moon', 100000000000000, 'sak.rimoon@gmail.com', '93227228', '555275467', '555275467', 'saki', '123')
+(2, 'Carlos Henrique', 2200, 'carlos.tec@email.com.br', '92666-3818', '31.982.279-5', '750.793.068-82', 'carlos', '123'),
+(3, 'Sakiri Moon', 10000, 'sak.rimoon@gmail.com', '9322-7228', '55.527.546-7', '545.552.754-67', 'saki', '123');
 
 -- --------------------------------------------------------
 
