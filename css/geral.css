@@ -22,7 +22,7 @@
 }
 header {
   width: 100vw;
-  position: absolute;
+  position: fixed;
   background-color: #ff4a57;
   z-index: 2;
   height: 6.5rem;
@@ -71,7 +71,8 @@ header {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--white);
+  z-index: 11;
+  background-color: white;
 }
 
 body {
