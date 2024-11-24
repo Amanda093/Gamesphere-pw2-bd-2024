@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/geral.css" />
   <link rel="stylesheet" href="../css/crud.css" />
-  <title>Fornecedor</title>
+  <title>Funcionário</title>
 </head>
 
 <body>
@@ -14,14 +14,14 @@
   require_once("../components/navbar.php");
   ?>
 
-<main class="container">
+  <main class="container">
     <h1>Informações</h1>
     <form name="form-crud" method="POST" class="form-crud">
       <div class="input-grid">
         <div class="input-row">
           <div class="input-div">
-            <label for="CodFornecedor">CodFornecedor</label>
-            <input type="number" name="CodFornecedor" id="CodFornecedor">
+            <label for="CodFuncionario">CodFuncionario</label>
+            <input type="number" name="CodFuncionario" id="CodFuncionario">
           </div>
           <div class="input-div">
             <label for="Nome">Nome</label>
@@ -30,18 +30,41 @@
         </div>
         <div class="input-row">
           <div class="input-div">
-            <label for="CNPJ">CNPJ</label>
-            <input type="number" name="CNPJ" id="CNPJ">
+            <label for="Salario">Salário</label>
+            <input type="number" name="Salario" id="Salario">
+          </div>
+          <div class="input-div">
+            <label for="Email">Email</label>
+            <input type="text" name="Email" id="Email">
           </div>
         </div>
         <div class="input-row">
           <div class="input-div">
-            <label for="Endereco">Endereço</label>
-            <input type="text" name="Endereco" id="Endereco">
-          </div>
-          <div class="input-div">
             <label for="Telefone">Telefone</label>
             <input type="number" name="Telefone" id="Telefone">
+          </div>
+          <div class="input-div">
+            <label for="RG">RG</label>
+            <input type="number" name="RG" id="RG">
+          </div>
+
+        </div>
+        <div class="input-row">
+          <div class="input-div">
+            <label for="CPF">CPF</label>
+            <input type="number" name="CPF" id="CPF">
+          </div>
+
+
+        </div>
+        <div class="input-row">
+          <div class="input-div">
+            <label for="Usuario">Usuario</label>
+            <input type="text" name="Usuario" id="Usuario">
+          </div>
+          <div class="input-div">
+            <label for="Senha">Senha</label>
+            <input type="number" name="Senha" id="Senha">
           </div>
         </div>
       </div>

@@ -214,3 +214,9 @@ input {
     text-align: center;
   }
 }
+.inputdisabled {
+  filter: contrast(0.3) grayscale(20%) brightness(1.5);
+  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}

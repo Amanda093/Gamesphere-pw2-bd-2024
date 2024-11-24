@@ -14,8 +14,9 @@
   require_once("../components/navbar.php");
   ?>
 
-<main class="container">
+  <main class="container">
     <h1>Informações</h1>
+
     <form name="form-crud" method="POST" class="form-crud">
       <div class="input-grid">
         <div class="input-row">

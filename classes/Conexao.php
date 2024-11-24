@@ -15,7 +15,7 @@ class Conexao extends PDO
     public function __construct()
     {
         // Chama o construtor da classe pai (PDO) para estabelecer a conexão
-        parent::__construct("mysql:host=$this->host;dbname=$this->db", "$this->usuario", "$this->senha");
+        parent::__construct("mysql:host=$this->db_host;dbname=$this->db_name", "$this->db_user", "$this->db_pass");
     }
 
     // Método estático para obter a instância única da classe
