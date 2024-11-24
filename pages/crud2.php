@@ -74,6 +74,7 @@ else if (isset($alterar)) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/geral.css" />
+  <link rel="icon" href="../img/gamesphere.ico" />
   <link rel="stylesheet" href="../css/crud.css" />
   <title>Cliente</title>
 </head>
