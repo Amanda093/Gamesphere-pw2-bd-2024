@@ -103,39 +103,45 @@ else if (isset($alterar)) {
         <div class="input-row">
           <div class="input-div inputdisabled">
             <label for="CodFuncionario">CodFuncionario</label>
-            <input type="number" name="CodFuncionario" id="CodFuncionario"
+            <input type="number" placeholder="0" name="CodFuncionario" id="CodFuncionario"
               value="<?= ($CodFuncionario != '') ? $CodFuncionario : '' ?>" tabindex="-1">
           </div>
           <div class="input-div">
             <label for="Nome">Nome</label>
-            <input type="text" name="Nome" id="Nome" value="<?= ($Nome != '') ? $Nome : '' ?>">
+            <input type="text" name="Nome" placeholder="Nome do funcionario" id="Nome"
+              value="<?= ($Nome != '') ? $Nome : '' ?>" required>
           </div>
         </div>
         <div class="input-row">
           <div class="input-div">
             <label for="Salario">Salário</label>
-            <input type="number" name="Salario" id="Salario" value="<?= ($Salario != '') ? $Salario : '' ?>">
+            <input type="number" name="Salario" placeholder="0" id="Salario"
+              value="<?= ($Salario != '') ? $Salario : '' ?>" required>
           </div>
           <div class="input-div">
             <label for="Email">Email</label>
-            <input type="text" name="Email" id="Email" value="<?= ($Email != '') ? $Email : '' ?>">
+            <input type="text" name="Email" placeholder="email@email" id="Email"
+              value="<?= ($Email != '') ? $Email : '' ?>" required>
           </div>
         </div>
         <div class="input-row">
           <div class="input-div">
             <label for="Telefone">Telefone</label>
-            <input type="text" name="Telefone" id="Telefone" value="<?= ($Telefone != '') ? $Telefone : '' ?>">
+            <input type="text" name="Telefone" id="Telefone" placeholder="00000-0000"
+              value="<?= ($Telefone != '') ? $Telefone : '' ?>" required>
           </div>
           <div class="input-div">
             <label for="RG">RG</label>
-            <input type="text" name="RG" id="RG" value="<?= ($RG != '') ? $RG : '' ?>">
+            <input type="text" name="RG" placeholder="00.000.000-0" id="RG" value="<?= ($RG != '') ? $RG : '' ?>"
+              required>
           </div>
 
         </div>
         <div class="input-row">
           <div class="input-div">
             <label for="CPF">CPF</label>
-            <input type="text" name="CPF" id="CPF" value="<?= ($CPF != '') ? $CPF : '' ?>">
+            <input type="text" name="CPF" placeholder="000.000.000-00" id="CPF" value="<?= ($CPF != '') ? $CPF : '' ?>"
+              required>
           </div>
 
 
@@ -143,11 +149,13 @@ else if (isset($alterar)) {
         <div class="input-row">
           <div class="input-div">
             <label for="Usuario">Usuario</label>
-            <input type="text" name="Usuario" id="Usuario" value="<?= ($Usuario != '') ? $Usuario : '' ?>">
+            <input type="text" name="Usuario" placeholder="Usuario do funcionario" id="Usuario"
+              value="<?= ($Usuario != '') ? $Usuario : '' ?>" required>
           </div>
           <div class="input-div">
             <label for="Senha">Senha</label>
-            <input type="number" name="Senha" id="Senha" value="<?= ($Senha != '') ? $Senha : '' ?>">
+            <input type="number" name="Senha" placeholder="Senha do funcionario" id="Senha"
+              value="<?= ($Senha != '') ? $Senha : '' ?>" required>
           </div>
         </div>
       </div>
@@ -167,7 +175,7 @@ else if (isset($alterar)) {
         <button name="pesquisar" type="submit">Pesquisar</button>
         <input placeholder="Nome do funcionario" type="text" name="pesquisa" id="pesquisa" value="<?php if (isset($_GET['pesquisar'])) {
           echo $NomePesquisa;
-        } ?>">
+        } ?>" required>
       </form>
       <div class="crud-frame">
         <?php if ($funcionarios != []) { ?>
@@ -218,7 +226,12 @@ else if (isset($alterar)) {
   </main>
 
 </body>
-
-</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<script>
+  $("#Telefone").mask("00000-0000");
+  $("#RG").mask("00.000.000-0");
+  $("#CPF").mask("000.000.000-00");
+</script>
 
 </html>

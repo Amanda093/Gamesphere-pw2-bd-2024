@@ -12,14 +12,17 @@
   <?php require_once("../components/navbar.php"); ?>
   <main class="container">
     <section class="main">
-      <form id="formContato">
+      <form id="formContato" method="POST" action="https://formsubmit.co/carloshrbarile@gmail.com">
+        <input type="hidden" name="_next" value="http://localhost/gamesphere-pw2-bd-2024/pages/main.php">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <h1>Envie uma mensagem!</h1>
         <p>Nome</p>
-        <input size="20" />
+        <input required placeholder="Seu Nome..." name="name" type="text" />
         <p>Email:</p>
-        <input size="20" />
+        <input required placeholder="Seu Email..." name="email" type="email" />
         <p>Reclamação/Comentário:</p>
-        <textarea rows="5" cols="20"></textarea>
+        <textarea rows="5" cols="20" required placeholder="Sua Mensagem..." name="message"></textarea>
         <div class="row">
           <button name="btnEnviar" type="submit">Enviar</button>
           <button class="button-outlined" name="btnLimpar" type="reset">Limpar</button>

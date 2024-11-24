@@ -91,8 +91,8 @@ else if (isset($alterar)) {
           </div>
           <div class="input-div">
             <label for="Nome">Nome</label>
-            <input placeholder="Nome" type="text" name="Nome" id="Nome" value="<?= ($Nome != '') ? $Nome : '' ?>"
-              required>
+            <input placeholder="Nome" type="text" maxlength="35" name="Nome" id="Nome"
+              value="<?= ($Nome != '') ? $Nome : '' ?>" required>
           </div>
         </div>
         <div class="input-row">
@@ -132,7 +132,7 @@ else if (isset($alterar)) {
         <button name="pesquisar" type="submit">Pesquisar</button>
         <input placeholder="Nome do produto" type="text" name="pesquisa" id="pesquisa" value="<?php if (isset($_GET['pesquisar'])) {
           echo $NomePesquisa;
-        } ?>">
+        } ?>" required>
       </form>
       <div class="crud-frame">
         <?php if ($produtos != []) { ?>

@@ -93,34 +93,39 @@ else if (isset($alterar)) {
         <div class="input-row">
           <div class="input-div inputdisabled">
             <label for="CodCliente">CodCliente</label>
-            <input type="number" name="CodCliente" id="CodCliente" value="<?= ($CodCliente != '') ? $CodCliente : '' ?>"
-              tabindex="-1">
+            <input type="number" placeholder="0" name="CodCliente" id="CodCliente"
+              value="<?= ($CodCliente != '') ? $CodCliente : '' ?>" tabindex="-1">
           </div>
           <div class="input-div">
             <label for="Nome">Nome</label>
-            <input type="text" name="Nome" id="Nome" value="<?= ($Nome != '') ? $Nome : '' ?>">
+            <input type="text" placeholder="Nome do cliente" maxlength="35" name="Nome" id="Nome"
+              value="<?= ($Nome != '') ? $Nome : '' ?>" required>
           </div>
         </div>
 
         <div class=" input-row">
           <div class="input-div">
             <label for="Telefone">Telefone</label>
-            <input type="text" name="Telefone" id="Telefone" value="<?= ($Telefone != '') ? $Telefone : '' ?>">
+            <input type="text" name="Telefone" placeholder="00000-0000" id="Telefone"
+              value="<?= ($Telefone != '') ? $Telefone : '' ?>" required>
           </div>
           <div class=" input-div">
             <label for="Endereco">Endereço</label>
-            <input type="text" name="Endereco" id="Endereco" value="<?= ($Endereco != '') ? $Endereco : '' ?>">
+            <input type="text" name="Endereco" id="Endereco" maxlength="80" placeholder="Endereço do cliente"
+              value="<?= ($Endereco != '') ? $Endereco : '' ?>" required>
           </div>
         </div>
 
         <div class=" input-row">
           <div class="input-div">
             <label for="RG">RG</label>
-            <input type="text" name="RG" id="RG" value="<?= ($RG != '') ? $RG : '' ?>">
+            <input type="text" name="RG" id="RG" placeholder="00.000.000-0" value="<?= ($RG != '') ? $RG : '' ?>"
+              required>
           </div>
           <div class=" input-div">
             <label for="CPF">CPF</label>
-            <input type="text" name="CPF" id="CPF" value="<?= ($CPF != '') ? $CPF : '' ?>">
+            <input type="text" name="CPF" id="CPF" placeholder="000.000.000-00" value="<?= ($CPF != '') ? $CPF : '' ?>"
+              required>
           </div>
         </div>
       </div>
@@ -141,7 +146,7 @@ else if (isset($alterar)) {
         <button name="pesquisar" type="submit">Pesquisar</button>
         <input placeholder="Nome do cliente" type="text" name="pesquisa" id="pesquisa" value="<?php if (isset($_GET['pesquisar'])) {
           echo $NomePesquisa;
-        } ?>">
+        } ?>" required>
       </form>
       <div class="crud-frame">
         <?php if ($clientes != []) { ?>
@@ -185,6 +190,14 @@ else if (isset($alterar)) {
   </main>
 
 </body>
-</body>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<script>
+  $("#Telefone").mask("00000-0000");
+  $("#RG").mask("00.000.000-0");
+  $("#CPF").mask("000.000.000-00");
+</script>
 
 </html>
