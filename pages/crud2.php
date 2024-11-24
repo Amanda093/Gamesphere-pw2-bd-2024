@@ -35,7 +35,7 @@
           </div>
           <div class="input-div">
             <label for="Endereco">Endereço</label>
-            <input type="number" name="Endereco" id="Endereco">
+            <input type="text" name="Endereco" id="Endereco">
           </div>
         </div>
         <div class="input-row">
@@ -45,7 +45,7 @@
           </div>
           <div class="input-div">
             <label for="CPF">CPF</label>
-            <input type="text" name="CPF" id="CPF">
+            <input type="number" name="CPF" id="CPF">
           </div>
         </div>
       </div>

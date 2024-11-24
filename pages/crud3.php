@@ -37,7 +37,7 @@
         <div class="input-row">
           <div class="input-div">
             <label for="Endereco">Endereço</label>
-            <input type="number" name="Endereco" id="Endereco">
+            <input type="text" name="Endereco" id="Endereco">
           </div>
           <div class="input-div">
             <label for="Telefone">Telefone</label>
