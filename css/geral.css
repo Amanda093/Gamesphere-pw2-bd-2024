@@ -5,6 +5,9 @@
   border: none;
   line-height: calc(1em + 0.5rem);
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -87,8 +90,9 @@ p {
 input,
 textarea {
   outline: 2px solid #ff4a57;
-  padding: 0.2em 0.3em;
-  border-radius: 0.3em;
+  outline-offset: -2px;
+  padding: 0.3em 0.4em;
+  border-radius: 0.5em;
   font-size: 20px;
 }
 

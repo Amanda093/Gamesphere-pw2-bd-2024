@@ -8,7 +8,7 @@
                 echo 'pagatual';
             } else {
                 echo 'a-under';
-            } ?>">Crud1</a>
+            } ?>">Produto</a>
             <a href="../pages/crud2.php" class="<?php if ($activePage == 'Crud2') {
                 echo 'pagatual';
             } else {
