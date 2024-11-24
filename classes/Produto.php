@@ -192,13 +192,8 @@ class Produto
             $sql = $this->conn->prepare("DELETE FROM produto WHERE CodProduto = ?");
             $sql->bindParam(1, $CodProduto, PDO::PARAM_INT);
             $sql->execute();
-            return "Excluído com sucesso!";
         } catch (PDOException $exc) {
-            return '
-                <script type="text/javascript">
-                    error("Excluido com sucesso!");
-                </script>
-                ';
+            echo "Erro ao atualizar funcionario." . $exc->getMessage();
         }
     }
 

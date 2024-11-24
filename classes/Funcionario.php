@@ -115,6 +115,22 @@ class Funcionario
     }
 
     // ===== Métodos =====
+    public function buildFuncionario($data)
+    {
+        $funcionario = new Funcionario();
+
+        $funcionario->setCodFuncionario($data["CodFuncionario"]);
+        $funcionario->setNome($data["Nome"]);
+        $funcionario->setSalario($data["Salario"]);
+        $funcionario->setEmail($data["Email"]);
+        $funcionario->setTelefone($data["Telefone"]);
+        $funcionario->setRG($data["RG"]);
+        $funcionario->setCPF($data["CPF"]);
+        $funcionario->setUsuario($data["Usuario"]);
+        $funcionario->setSenha($data["Senha"]);
+
+        return $funcionario;
+    }
 
     function login()
     {
@@ -131,17 +147,139 @@ class Funcionario
             echo 'Erro ao executar login. ' . $exc->getMessage();
         }
     }
+
+    function getAllFuncionario()
+    {
+        try {
+            $funcionarios = [];
+            $this->conn = new Conexao();
+            $sql = $this->conn->query("select * from funcionario order by CodFuncionario");
+            $sql->execute();
+            $funcionarioArray = $sql->fetchAll();
+
+            foreach ($funcionarioArray as $funcionario) {
+                $funcionarios[] = $this->buildFuncionario($funcionario);
+            }
+
+            return $funcionarios;
+
+        } catch (PDOException $exc) {
+            echo "Erro ao executar consulta getAllProduto. " . $exc->getMessage();
+        }
+    }
+
+    function getFuncionarioByName($name)
+    {
+        try {
+            $funcionarios = [];
+            $name = '%' . $name . '%';
+            $this->conn = new Conexao();
+            $sql = $this->conn->prepare("select * from funcionario where Nome like ?");
+            @$sql->bindParam(1, $name, PDO::PARAM_STR);
+            $sql->execute();
+            $funcionarioArray = $sql->fetchAll();
+
+            if ($funcionarioArray != []) {
+                foreach ($funcionarioArray as $funcionario) {
+                    $funcionarios[] = $this->buildFuncionario($funcionario);
+                }
+            }
+
+            return $funcionarios;
+        } catch (PDOException $exc) {
+            echo "Erro ao executar consulta getFuncionarioByName." . $exc->getMessage();
+        }
+    }
+
+    function getFuncionarioByCod($cod)
+    {
+        try {
+            $funcionario = false;
+            $this->conn = new Conexao();
+            $sql = $this->conn->prepare("select * from funcionario where CodFuncionario like ?");
+            @$sql->bindParam(1, $cod, PDO::PARAM_STR);
+            $sql->execute();
+            $funcionarioData = $sql->fetch();
+
+            if ($funcionarioData != "") {
+                $funcionario = $this->buildFuncionario($funcionarioData);
+            }
+
+            return $funcionario;
+        } catch (PDOException $exc) {
+            echo "Erro ao executar consulta getFuncionarioByCod." . $exc->getMessage();
+        }
+    }
     function create()
     {
-    }
-    function read()
-    {
+        $Nome = $this->getNome();
+        $Salario = $this->getSalario();
+        $Email = $this->getEmail();
+        $Telefone = $this->getTelefone();
+        $RG = $this->getRG();
+        $CPF = $this->getCPF();
+        $Usuario = $this->getUsuario();
+        $Senha = $this->getSenha();
+
+        try {
+            $this->conn = new Conexao();
+            $sql = $this->conn->prepare("insert into funcionario values (null, ?,?,?,?,?,?,?,?)");
+            @$sql->bindParam(1, $Nome, PDO::PARAM_STR);
+            @$sql->bindParam(2, $Salario, PDO::PARAM_STR);
+            @$sql->bindParam(3, $Email, PDO::PARAM_STR);
+            @$sql->bindParam(4, $Telefone, PDO::PARAM_STR);
+            @$sql->bindParam(5, $RG, PDO::PARAM_STR);
+            @$sql->bindParam(6, $CPF, PDO::PARAM_STR);
+            @$sql->bindParam(7, $Usuario, PDO::PARAM_STR);
+            @$sql->bindParam(8, $Senha, PDO::PARAM_STR);
+
+            $sql->execute();
+        } catch (PDOException $exc) {
+            echo "Erro ao inserir funcionario." . $exc->getMessage();
+        }
     }
     function update()
     {
+        $CodFuncionario = $this->getCodfuncionario();
+        $Nome = $this->getNome();
+        $Salario = $this->getSalario();
+        $Email = $this->getEmail();
+        $Telefone = $this->getTelefone();
+        $RG = $this->getRG();
+        $CPF = $this->getCPF();
+        $Usuario = $this->getUsuario();
+        $Senha = $this->getSenha();
+
+        try {
+            $this->conn = new Conexao();
+            $sql = $this->conn->prepare("update funcionario set Nome = ?, Salario = ?, Email = ?, Telefone = ?, RG = ?, CPF = ?, Usuario = ?, Senha = ? where CodFuncionario = ?");
+            @$sql->bindParam(1, $Nome, PDO::PARAM_STR);
+            @$sql->bindParam(2, $Salario, PDO::PARAM_STR);
+            @$sql->bindParam(3, $Email, PDO::PARAM_STR);
+            @$sql->bindParam(4, $Telefone, PDO::PARAM_STR);
+            @$sql->bindParam(5, $RG, PDO::PARAM_STR);
+            @$sql->bindParam(6, $CPF, PDO::PARAM_STR);
+            @$sql->bindParam(7, $Usuario, PDO::PARAM_STR);
+            @$sql->bindParam(8, $Senha, PDO::PARAM_STR);
+            @$sql->bindParam(9, $CodFuncionario, PDO::PARAM_STR);
+
+            $sql->execute();
+        } catch (PDOException $exc) {
+            echo "Erro ao atualizar funcionario." . $exc->getMessage();
+        }
     }
+
     function delete()
     {
+        $CodFuncionario = $this->getCodfuncionario();
+        try {
+            $this->conn = new Conexao();
+            $sql = $this->conn->prepare("DELETE FROM funcionario WHERE CodFuncionario = ?");
+            $sql->bindParam(1, $CodFuncionario, PDO::PARAM_INT);
+            $sql->execute();
+        } catch (PDOException $exc) {
+            echo "Erro ao atualizar funcionario." . $exc->getMessage();
+        }
     }
 
 }
