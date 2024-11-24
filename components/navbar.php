@@ -13,12 +13,12 @@
                 echo 'pagatual';
             } else {
                 echo 'a-under';
-            } ?>">Crud2</a>
+            } ?>">Cliente</a>
             <a href="../pages/crud3.php" class="<?php if ($activePage == 'Crud3') {
                 echo 'pagatual';
             } else {
                 echo 'a-under';
-            } ?>">Crud3</a>
+            } ?>">Fornecedor</a>
         </div>
     </div>
 </header>
