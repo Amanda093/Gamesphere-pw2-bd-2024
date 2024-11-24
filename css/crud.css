@@ -48,6 +48,7 @@ input {
   align-items: center;
 }
 .crud-frame {
+  border-radius: 0.5em;
   margin-block: 2rem;
   max-height: 30rem;
   overflow-y: auto;
@@ -105,8 +106,8 @@ input {
 }
 
 .fl-table {
-  border-radius: 5px;
-  font-size: 12px;
+  border-radius: 0.35rem;
+  font-size: 1em;
   font-weight: normal;
   border: none;
   border-collapse: collapse;
@@ -119,12 +120,12 @@ input {
 .fl-table td,
 .fl-table th {
   text-align: center;
-  padding: 8px;
+  padding: 0.6rem;
 }
 
 .fl-table td {
   border-right: 1px solid #f8f8f8;
-  font-size: 12px;
+  font-size: 0.9em;
 }
 
 .fl-table thead th {
@@ -156,7 +157,7 @@ input {
     content: "Scroll horizontally >";
     display: block;
     text-align: right;
-    font-size: 11px;
+    font-size: 0.75em;
     color: white;
     padding: 0 0 10px;
   }
@@ -185,7 +186,7 @@ input {
     overflow-x: hidden;
     overflow-y: auto;
     width: 120px;
-    font-size: 13px;
+    font-size: 0.85em;
     text-overflow: ellipsis;
   }
   .fl-table thead th {
