@@ -12,6 +12,16 @@
   <?php
   $activePage = 'Crud1';
   require_once("../components/navbar.php");
+
+  if (isset($_GET['visualizar'])) {
+    $CodProduto = $_POST["CodProdutoTable"];
+    $Nome = $_POST["NomeTable"];
+    $CodProduto = $_POST["PrecoTable"];
+    $CodProduto = $_POST["CodTipoProdTable"];
+    $CodProduto = $_POST["CodFornecedorTable"];
+  }
+
+
   ?>
   <main class="container">
     <h1>Informações</h1>
@@ -73,134 +83,26 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
-            <tr>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-              <td>aaaaaa</td>
-            </tr>
+            <?php for ($i = 0; $i < 10; $i++): ?>
+              <tr>
+                <td>aaaaaa</td>
+                <td>aaaaaa</td>
+                <td>aaaaaa</td>
+                <td>aaaaaa</td>
+                <td>aaaaaa</td>
+                <td>
+                  <form action="crud1.php?visualizar=1" method="POST">
+                    <input type="hidden" name="CodProdutoTable" value="1">
+                    <input type="hidden" name="NomeTable" value="Teste">
+                    <input type="hidden" name="PrecoTable" value="12">
+                    <input type="hidden" name="CodTipoProdTable" value="1">
+                    <input type="hidden" name="CodFornecedorTable" value="1">
+                    <button type="submit" name="visualizar">Visualizar</button>
+                  </form>
+                </td>
+              </tr>
+
+            <?php endfor; ?>
           </tbody>
         </table>
       </div>
