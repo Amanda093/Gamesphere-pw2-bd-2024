@@ -20,8 +20,8 @@
       <div class="input-grid">
         <div class="input-row">
           <div class="input-div">
-            <label for="CodProduto">CodProduto</label>
-            <input type="number" name="CodProduto" id="CodProduto">
+            <label for="CodFornecedor">CodFornecedor</label>
+            <input type="number" name="CodFornecedor" id="CodFornecedor">
           </div>
           <div class="input-div">
             <label for="Nome">Nome</label>
@@ -30,18 +30,18 @@
         </div>
         <div class="input-row">
           <div class="input-div">
-            <label for="Preco">Preco</label>
-            <input type="number" name="Preco" id="Preco">
-          </div>
-          <div class="input-div">
-            <label for="CodTipoProd">CodTipoProd</label>
-            <input type="number" name="CodTipoProd" id="CodTipoProd">
+            <label for="CNPJ">CNPJ</label>
+            <input type="number" name="CNPJ" id="CNPJ">
           </div>
         </div>
         <div class="input-row">
           <div class="input-div">
-            <label for="CodFornecedor">CodFornecedor</label>
-            <input type="number" name="CodFornecedor" id="CodFornecedor">
+            <label for="Endereco">Endereço</label>
+            <input type="number" name="Endereco" id="Endereco">
+          </div>
+          <div class="input-div">
+            <label for="Telefone">Telefone</label>
+            <input type="number" name="Telefone" id="Telefone">
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
 
     <div class="crud-table-div">
       <form class="pesquisar-div" method="POST">
-        <h1>Produtos</h1>
+        <h1>Fornecedores</h1>
         <button name="pesquisar" type="submit">Pesquisar</button>
         <input type="text" name="pesquisa" id="pesquisa">
       </form>
@@ -65,11 +65,11 @@
         <table class="crud-table fl-table">
           <thead>
             <tr>
-              <th>CodProduto</th>
-              <th>Nome</th>
-              <th>Preco</th>
-              <th>CodTipoProd</th>
               <th>CodFornecedor</th>
+              <th>Nome</th>
+              <th>CNPJ</th>
+              <th>Telefone</th>
+              <th>Endereço</th>
               <th>Ações</th>
             </tr>
           </thead>
